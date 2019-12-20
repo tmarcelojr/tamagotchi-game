@@ -46,7 +46,7 @@ const game = {
 				this.timer++
 			}
 			this.printLevels()
-		}, 1000)
+		}, 2000)
 
 	},
 
@@ -58,35 +58,35 @@ const game = {
 		$('#timer').text(this.timer)
 
 	},
-
-	// feed() {
-	// 	$('#feed').on('click', () => {
-	// 		console.log('you fed so and so');
-	// 		if(this.hunger < 10) {
-	// 			this.hunger++
-	// 		}
-	// 		else {
-	// 			console.log('full');
-	// 		}
-	// 		return
-	// 	})
-	// }
 }
 
 
 $('#feed').on('click', () => {
 	console.log('fed');
 	if(game.hunger > 0) {
-		game.hunger--
+		game.hunger--		
+		setTimeout(() => {
+			$('#animation').attr('src', 'https://media.giphy.com/media/A1DnR26Wrbby0/giphy.gif')
+			$('#animation').attr('height', '200')
+		},1000);
 	} else {
 		console.log('cant feed');
 	}
+	$('#animation').attr('src', 'https://pa1.narvii.com/6550/2a57a1d5d981be177e5b7e20404c7b5c637dca61_hq.gif')
 })
 
 $('#lights-off').on('click', () => {
 	console.log('turned off lights');
 	if(game.sleepiness > 0) {
 		game.sleepiness--
+		$('body').css('background-image', 'linear-gradient(rgba(28, 21, 74, 0.8), rgba(10, 10, 10, 0.4)), url("https://i.imgur.com/hxQkAe2.jpg?1")')
+		$('body').css('opacity', '0')
+		setTimeout(()=> {
+			$('body').css('background-image', 'linear-gradient(rgba(28, 21, 74, 0), rgba(10, 10, 10, 0)), url("https://i.imgur.com/hxQkAe2.jpg?1")')
+			$('body').css('opacity', '1')
+		}, 4000)
+
+
 	} else {
 		console.log('not tired');
 	}
@@ -101,8 +101,15 @@ $('#play').on('click', () => {
 	}
 })
 
+$('#submit').on('click', (event) => {
+	event.preventDefault()
+	console.log($("#myText")[0].value);
+	const name = $("#myText")[0].value;
+  	$("#display-name").text(name);
+	game.startRound()
+	$('#submit').hide()
+	$('#myText').hide()
+})
 
 
-
-game.startRound()
 

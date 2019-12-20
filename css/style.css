@@ -1,13 +1,19 @@
 
 body {
 	text-align: center;
-	background: url('https://i.imgur.com/hxQkAe2.jpg?1');
+	background-image: url("https://i.imgur.com/hxQkAe2.jpg?1");
 	background-size: cover;
-	
 }
 
 header {
 	text-align: center;
+}
+
+#display-name {
+	font-family: 'Bangers', uppercase;
+	color: rgb(61, 64, 67);
+	font-size: 32px;
+	margin-top: 0;
 }
 
 #divider {
@@ -41,6 +47,15 @@ header {
 	color: rgb(88, 152, 46);
 }
 
+#display {
+	height: 250px;
+}
+
+#animation {
+	margin-top: 85px;
+	width: 200px;
+}
+
 footer {
 	margin-top: -30px;
 }
@@ -72,10 +87,6 @@ transition: all 0.4s ease 0s;
 
 #feed {
 	background: rgb(211, 77, 74)
-}
-
-#clean {
-	background: rgb(207, 108, 46)
 }
 
 #lights-off {
