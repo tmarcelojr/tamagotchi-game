@@ -48,16 +48,54 @@ header {
 }
 
 #display {
-	height: 250px;
+	height: 200px;
+	display: inline-block;
 }
 
 #animation {
 	margin-top: 85px;
-	width: 200px;
+	height: 400px;
+	width: 400px;
+	background-repeat: no-repeat;
+	/*background-color: red;*/
 }
 
 footer {
 	margin-top: -30px;
+}
+
+#main {
+	height: 150px;
+	margin-bottom: -30px;
+}
+
+#myText {
+	height:25px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+#submit {
+	height: 30px;
+	width: 100px;
+	color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+	background: rgb(173, 229, 94);
+	margin-top: 10px;
+}
+
+#submit:hover {
+	background: #434343;
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
 }
 
 .button {
@@ -65,24 +103,24 @@ footer {
 }
 
 .button {
-height: 30px;
-width: 100px;
-color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-border-radius: 5px;
-display: inline-block;
-border: none;
-transition: all 0.4s ease 0s;
+	height: 30px;
+	width: 100px;
+	color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
 }
 
 .button:hover {
-background: #434343;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-transition: all 0.4s ease 0s;
+	background: #434343;
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
 }
 
 #feed {

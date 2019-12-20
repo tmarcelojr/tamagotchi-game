@@ -25,28 +25,27 @@ const game = {
 		    	this.hunger++
 		    	if(this.hunger >= 10) {
 		    	clearInterval(timer)
-		        console.log('died of hunger');
+		    	$('#main').attr('src', "https://media2.giphy.com/media/VP4Dx417Fgeuk/source.gif")
 				}
 			}
 			if(this.timer % 6 === 0){
 		    	this.sleepiness++
 		    	if(this.sleepiness >= 10) {
 		    	clearInterval(timer)
-		        console.log('died from exhaustion');
 				}
 			}
 			if(this.timer % 4 === 0){
 		    	this.boredom++
 		    	if(this.boredom >= 10) {
 		    	clearInterval(timer)
-		        console.log('died from boredom');
+		    	$('#main').attr('src', "https://66.media.tumblr.com/a437d5b853dd7ab80dc0a621e968b87a/tumblr_n46h18P5Je1qegdapo6_250.gifv")
 				}
 			}
 			if(this.timer >= 0){
 				this.timer++
 			}
 			this.printLevels()
-		}, 2000)
+		},2000)
 
 	},
 
@@ -65,14 +64,18 @@ $('#feed').on('click', () => {
 	console.log('fed');
 	if(game.hunger > 0) {
 		game.hunger--		
+		$('#main').attr('src', "https://media.giphy.com/media/A1DnR26Wrbby0/giphy.gif")
 		setTimeout(() => {
-			$('#animation').attr('src', 'https://media.giphy.com/media/A1DnR26Wrbby0/giphy.gif')
-			$('#animation').attr('height', '200')
-		},1000);
-	} else {
+			$('#main').attr('src', 'https://media0.giphy.com/media/DfREKOodsXTws/source.gif')
+		},2100);
+	}
+	else {
+		$('#main').attr('src', 'https://pa1.narvii.com/6417/8f0fe22299e93dea81ff940f87ddae4a2647d22a_hq.gif')
+		setTimeout(() => {
+			$('#main').attr('src', 'https://media0.giphy.com/media/DfREKOodsXTws/source.gif')
+		},1500);
 		console.log('cant feed');
 	}
-	$('#animation').attr('src', 'https://pa1.narvii.com/6550/2a57a1d5d981be177e5b7e20404c7b5c637dca61_hq.gif')
 })
 
 $('#lights-off').on('click', () => {
@@ -84,10 +87,15 @@ $('#lights-off').on('click', () => {
 		setTimeout(()=> {
 			$('body').css('background-image', 'linear-gradient(rgba(28, 21, 74, 0), rgba(10, 10, 10, 0)), url("https://i.imgur.com/hxQkAe2.jpg?1")')
 			$('body').css('opacity', '1')
-		}, 4000)
+		}, 3000)
 
 
-	} else {
+	} 
+	else {
+		$('#main').attr('src', 'https://pa1.narvii.com/6417/8f0fe22299e93dea81ff940f87ddae4a2647d22a_hq.gif')
+		setTimeout(() => {
+			$('#main').attr('src', 'https://media0.giphy.com/media/DfREKOodsXTws/source.gif')
+		},1500);
 		console.log('not tired');
 	}
 })
@@ -96,10 +104,24 @@ $('#play').on('click', () => {
 	console.log('yay');
 	if(game.boredom > 0) {
 		game.boredom--
-	} else {
+		$('#main').attr('src', "https://www.rpnation.com/gallery/sonictchi-run.30251/full")
+		setTimeout(() => {
+			$('#main').attr('src', 'https://66.media.tumblr.com/7dcc141bdfaff706b978d483807fd172/tumblr_n46h18P5Je1qegdapo2_500.gifv')
+		},2100);		
+		setTimeout(() => {
+			$('#main').attr('src', 'https://media0.giphy.com/media/DfREKOodsXTws/source.gif')
+		},5100);
+	} 
+	else {
+		$('#main').attr('src', 'https://pa1.narvii.com/6417/8f0fe22299e93dea81ff940f87ddae4a2647d22a_hq.gif')
+		setTimeout(() => {
+			$('#main').attr('src', 'https://media0.giphy.com/media/DfREKOodsXTws/source.gif')
+		},1500);
 		console.log(`i don't want to play right now`);
 	}
 })
+
+
 
 $('#submit').on('click', (event) => {
 	event.preventDefault()
@@ -110,6 +132,7 @@ $('#submit').on('click', (event) => {
 	$('#submit').hide()
 	$('#myText').hide()
 })
+
 
 
 
